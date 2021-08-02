@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon-weather.png" />
+    <title>My Weather</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        .weather-content {
+            margin: auto;
+            width: 600px;
+            background-color: rgb(253, 188, 158);
+            padding: 10px;
+            display: flex;
+        }
+
+        .c1 {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .c2 {
+            border-left: 1px solid black;
+            padding-left: 10px;
+            display: flex;
+        }
+
+        .c3 {
+            border-left: 1px solid black;
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+
+        .tv-large {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .tv-small {
+            font-size: 14px;
+        }
+
+        .tv-medium {
+            font-size: 15px;
+        }
+
+        #time {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weather-content">
+        <span id="time">Weather: </span>
+    </div>
+
+    <div class="weather-content">
+        <div class="c1">
+            <span id="city-name">HaiPhong-VN</span>
+            <img id="icon-weather" src="../img/weather.ico" alt="" width="40px" height="40px">
+            <br>
+            <span id="temp" class="tv-large">30 °C</span> <br>
+            <span id="desc" class="tv-small">Description</span>
+
+        </div>
+
+        <div class="c2">
+            <div>
+                <span class="tv-medium" id="pop">pop: 20 %</span> <br>
+                <span class="tv-medium" id="clouds">clouds: 20 %</span> <br>
+                <span class="tv-medium" id="humidity">humidity: 20%</span> <br>
+                <span class="tv-medium" id="feels-like">feels like: 34</span> <br>
+
+                <br>
+                <div style="width: 200px; border-top: 1px solid black; height: 1px; "></div>
+                <br>
+
+                <span class="tv-medium" id="wind-speed">wind speed: 4.1 m/s</span> <br>
+                <span class="tv-medium" id="wind-deg">wind deg: 192</span> <br>
+                <span class="tv-medium" id="visibility">visibility: 10 km</span> <br>
+                <span class="tv-medium" id="pressure">pressure: 20</span> <br>
+
+            </div>
+        </div>
+        <div class="c3">
+
+            <span class="tv-medium" id="sunrise">sunrise: </span> <br>
+            <span class="tv-medium" id="sunset">sunset: </span> <br>
+        </div>
+
+    </div>
+
+    <script>
+        const apikey1 = '3e65cba6de46a1e4074e68215ed5938a';
+        const units = 'metric';
+        const lang = 'en';
+
+        const cityName = document.getElementById('city-name');
+        const iconWeatherE = document.getElementById('icon-weather');
+        const tempE = document.getElementById('temp');
+        const descE = document.getElementById('desc');
+        const popE = document.getElementById('pop');
+        const cloudsE = document.getElementById('clouds');
+        const humidityE = document.getElementById('humidity');
+        const feelsLikeE = document.getElementById('feels-like');
+        const windSpeedE = document.getElementById('wind-speed');
+        const windDegE = document.getElementById('wind-deg');
+        const visibilityE = document.getElementById('visibility');
+        const pressureE = document.getElementById('pressure');
+        const sunriseE = document.getElementById('sunrise');
+        const sunsetE = document.getElementById('sunset');
+
+        const viewArr = [cityName, iconWeatherE, tempE, descE, popE, cloudsE, humidityE, feelsLikeE,
+                         windSpeedE, windDegE, visibilityE, pressureE, sunriseE, sunsetE];
+
+        Number.prototype.toRound = function () {
+            return Math.round(this)
+        }
+        Number.prototype.toTimeShow = function () {
+            const date = new Date(this * 1000);
+            return `${date.getHours()}h:${date.getMinutes()}'`;
+        }
+        String.prototype.toIconUrl = function () {
+            return `http://openweathermap.org/img/wn/${this}@2x.png`;
+        }
+
+        function hideView() {
+            viewArr.forEach(e => {
+                e.style.visibility = 'hidden';
+            });
+        }
+
+        function showView() {
+            viewArr.forEach(e => {
+                e.style.visibility = 'visible';
+            })
+        }
+
+
+        async function getLocation() {
+            return await new Promise((reslove, reject) => {
+                if (!navigator.geolocation) {
+                    reject('geolocation not av');
+                }
+
+                navigator.geolocation.getCurrentPosition(result => {
+                    reslove(result.coords);
+                }, error => {
+                    reject('reject location');
+                });
+            })
+        }
+
+        function fetchApiWeather(lat, lon) {
+            return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apikey1}&units=${units}&lang=${lang}`)
+        }
+
+        function loadCityName() {
+            $.get("http://ipinfo.io", function (response) {
+                const city = document.getElementById('city-name');
+                city.innerHTML = `${response.city} - ${response.country}`;
+            }, "jsonp");
+        }
+
+        function loadTimeUpdate() {
+            const time = document.getElementById('time');
+            const date = new Date();
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+
+            time.innerHTML = `Weather: ${day}/${month}/${year}, update at: ${hour}h:${minute}'`;
+        }
+
+        function loadDataWeather(weather) {
+            console.log(weather);
+            let current = weather.current;
+
+            let iconUrl = current.weather[0].icon.toIconUrl();
+            let temp = current.temp.toRound();
+            let desc = current.weather[0].description;
+            let pop = weather.hourly[0].pop;
+            let clouds = current.clouds;
+            let humidity = current.humidity;
+            let feelsLikes = current.feels_like.toRound();
+            let windSpeed = current.wind_speed;
+            let windDeg = current.wind_deg;
+            let visibility = current.visibility;
+            let pressure = current.pressure;
+            let sunrise = current.sunrise.toTimeShow();
+            let sunset = current.sunset.toTimeShow();
+
+            iconWeatherE.src = iconUrl;
+            tempE.innerHTML = `${temp} °C`;
+            descE.innerHTML = desc;
+            popE.innerHTML = `Pop: ${pop} %`;
+            cloudsE.innerHTML = `Clouds: ${clouds} %`;
+            humidityE.innerHTML = `Humidity: ${humidity} %`;
+            feelsLikeE.innerHTML = `Feels Like: ${feelsLikes} °C`;
+            windSpeedE.innerHTML = `Wind Speed: ${windSpeed} m/s`;
+            windDegE.innerHTML = `Wind Deg: ${windDeg} °`;
+            visibilityE.innerHTML = `Visibility: ${visibility} m`;
+            pressureE.innerHTML = `Pressure: ${pressure} hpA`;
+            sunriseE.innerHTML = `sunrise: ${sunrise}`;
+            sunsetE.innerHTML = `sunset: ${sunset}`;
+            showView();
+        }
+
+
+        function main() {
+            hideView();
+
+            loadTimeUpdate();
+            loadCityName();
+            getLocation()
+                .then(coords => fetchApiWeather(coords.latitude, coords.longitude))
+                .then(res => res.json())
+                .then(data => loadDataWeather(data));
+        }
+        main();
+
+    </script>
+</body>
+
+</html>
