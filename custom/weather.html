@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="./img/icon-weather.png" />
     <title>My Weather</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon-weather.png" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+
     <style>
         body {
             font-family: Helvetica, sans-serif;
@@ -68,7 +68,7 @@
     <div class="weather-content">
         <div class="c1">
             <span id="city-name">HaiPhong-VN</span>
-            <img id="icon-weather" src="../img/weather.ico" alt="" width="40px" height="40px">
+            <img id="icon-weather" alt="" width="40px" height="40px">
             <br>
             <span id="temp" class="tv-large">30 °C</span> <br>
             <span id="desc" class="tv-small">Description</span>
@@ -123,6 +123,41 @@
 
         const viewArr = [cityName, iconWeatherE, tempE, descE, popE, cloudsE, humidityE, feelsLikeE,
                          windSpeedE, windDegE, visibilityE, pressureE, sunriseE, sunsetE];
+        let language = navigator.language;
+        if (language !== 'vi-VN') {
+            language = 'default';
+        }
+
+        const msg = {
+            'default': {
+                'weather_forecast': 'Weather Forecast',
+                'update_at': 'update at',
+                'pop': 'Pop',
+                'clouds': 'Clouds',
+                'humidity': 'Humidity',
+                'feels_Like': 'Feels Like',
+                'wind_speed': 'Wind Speed',
+                'wind_deg': 'Wind_Deg',
+                'visibility': 'Visibility',
+                'pressure': 'Pressure',
+                'sunrise': 'sunrise',
+                'sunset': 'sunset'
+            },
+            'vi-VN': {
+                'weather_forecast': 'Dự báo thời tiết',
+                'update_at': 'cập nhật lúc',
+                'pop': 'Khả năng mưa',
+                'clouds': 'Mây',
+                'humidity': 'Độ ẩm',
+                'feels_like': 'Cảm nhận',
+                'wind_speed': 'Gió',
+                'wind_deg': 'Hướng gió',
+                'visibility': 'Tầm nhìn',
+                'pressure': 'Áp suất',
+                'sunrise': 'Bình minh',
+                'sunset': 'Hoàng hôn'
+            }
+        };
 
         Number.prototype.toRound = function () {
             return Math.round(this)
@@ -133,6 +168,23 @@
         }
         String.prototype.toIconUrl = function () {
             return `http://openweathermap.org/img/wn/${this}@2x.png`;
+        }
+        String.prototype.toMainVi = function () {
+            switch(this.toLowerCase()) {
+                case "thunderstorm": return "Dông, Sấm sét"
+                case "drizzle": return "Mưa phùn"
+                case "rain": return "Có mưa"
+                case "snow": return "Tuyết rơi"
+                case "mist": return "Sương mù"
+                case "smoke": return "Khói bụi"
+                case "haze": return "Sương mù buổi sáng"
+                case "dust": return "Bụi bặm"
+                case "ash": return "Tro núi lửa"
+                case "tornado": return "Lốc xoáy"
+                case "clear": return "Trời quang"
+                case "clouds": return "Nhiều mây"
+                default: return this
+            }
         }
 
         function hideView() {
@@ -182,7 +234,7 @@
             const hour = date.getHours();
             const minute = date.getMinutes();
 
-            time.innerHTML = `Weather: ${day}/${month}/${year}, update at: ${hour}h:${minute}'`;
+            time.innerHTML = `${msg[language].weather_forecast}: ${day}/${month}/${year}, ${msg[language].update_at}: ${hour}h:${minute}'`;
         }
 
         function loadDataWeather(weather) {
@@ -203,20 +255,26 @@
             let sunrise = current.sunrise.toTimeShow();
             let sunset = current.sunset.toTimeShow();
 
+            const str = msg[language];
+
             iconWeatherE.src = iconUrl;
             tempE.innerHTML = `${temp} °C`;
-            descE.innerHTML = desc;
-            popE.innerHTML = `Pop: ${pop} %`;
-            cloudsE.innerHTML = `Clouds: ${clouds} %`;
-            humidityE.innerHTML = `Humidity: ${humidity} %`;
-            feelsLikeE.innerHTML = `Feels Like: ${feelsLikes} °C`;
-            windSpeedE.innerHTML = `Wind Speed: ${windSpeed} m/s`;
-            windDegE.innerHTML = `Wind Deg: ${windDeg} °`;
-            visibilityE.innerHTML = `Visibility: ${visibility} m`;
-            pressureE.innerHTML = `Pressure: ${pressure} hpA`;
-            sunriseE.innerHTML = `sunrise: ${sunrise}`;
-            sunsetE.innerHTML = `sunset: ${sunset}`;
+            popE.innerHTML = `${str.pop}: ${pop} %`;
+            cloudsE.innerHTML = `${str.clouds}: ${clouds} %`;
+            humidityE.innerHTML = `${str.humidity}: ${humidity} %`;
+            feelsLikeE.innerHTML = `${str.feels_like}: ${feelsLikes} °C`;
+            windSpeedE.innerHTML = `${str.wind_speed}: ${windSpeed} m/s`;
+            windDegE.innerHTML = `${str.wind_deg}: ${windDeg} °`;
+            visibilityE.innerHTML = `${str.visibility}: ${visibility} m`;
+            pressureE.innerHTML = `${str.pressure}: ${pressure} hpA`;
+            sunriseE.innerHTML = `${str.sunrise}: ${sunrise}`;
+            sunsetE.innerHTML = `${str.sunset}: ${sunset}`;
+
+            const main = language === 'vi-VN' ?  current.weather[0].main.toMainVi(): current.weather[0].main;
+            descE.innerHTML = main;
             showView();
+
+
         }
 
 
