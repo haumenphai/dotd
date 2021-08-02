@@ -164,7 +164,15 @@
         }
         Number.prototype.toTimeShow = function () {
             const date = new Date(this * 1000);
-            return `${date.getHours()}h:${date.getMinutes()}'`;
+            let hour = date.getHours();
+            let minute = date.getMinutes();
+            if (hour < 10) {
+                hour = '0' + hour;
+            }
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
+            return `${hour}h:${minute}'`;
         }
         String.prototype.toIconUrl = function () {
             return `http://openweathermap.org/img/wn/${this}@2x.png`;
@@ -231,8 +239,15 @@
             const day = date.getDate();
             const month = date.getMonth() + 1;
             const year = date.getFullYear();
-            const hour = date.getHours();
-            const minute = date.getMinutes();
+            let hour = date.getHours();
+            let minute = date.getMinutes();
+            
+            if (hour < 10) {
+                hour = '0' + hour;
+            }
+            if (minute < 10) {
+                minute = '0' + minute;
+            }
 
             time.innerHTML = `${msg[language].weather_forecast}: ${day}/${month}/${year}, ${msg[language].update_at}: ${hour}h:${minute}'`;
         }
