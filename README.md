@@ -1,5 +1,1 @@
-<html lang="en">
-   
-<a href="https://haumenphai.github.io/dotd"></a>
-        
-</html>
+https://haumenphai.github.io/dotd        
