@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Học center element -->
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .p1 {
+            text-align: center;
+            width: 200px;
+            background-color: aqua;
+        }
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .box1 div {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+        }
+        /* 
+            Để center text sử dụng => text-align: center
+            Để center ngang element khối => margin: auto
+            Center dọc:
+                1. Sử dụng 1 container có  position: relative; 
+                   Sau đó thẻ con set postion: absolute + top: 50% + margin top 
+                                                                    hoặc + transform: translate(0, -50%);
+                2. Sử dụng flex box, set container là: align-items: center;
+            Center ngang, dọc:
+                1. Sử dụng 1 container có position: relative;
+                   Thẻ con :
+                        postion: top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                2. 
+
+        */
+    </style>
+</head>
+<body>
+    <span class="p1">Lorem ipsum dolor sit amet.</span>
+    <div class="box1">
+        <div></div>
+    </div>
+
+</body>
+</html>

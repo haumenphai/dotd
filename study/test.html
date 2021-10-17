@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Test! -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Test 1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #nav-top {
+            background-color: rgb(147, 139, 211);
+            width: 100%;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid gray;
+        }
+        #container-icon-show-menu {
+            background-color: royalblue;
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            color: rgb(235, 235, 235); 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+        #menu {
+            position: fixed;
+            top: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        #container-icon-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 70%;
+            flex-wrap: wrap;
+        }
+        #container-icon-menu > div {
+            background-color: burlywood;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+
+        #background-menu {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 50px;
+            opacity: 0.4;
+            display: none;
+        }
+        #tv-app {
+            color: white;
+            font-size: 20px;
+            margin: auto;
+           
+        }
+        #container-tv-app {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        #nav-container3 {
+            background-color: aqua;
+            flex-grow: 12;
+        }
+        #nav-container4 {
+            flex-grow: 1;
+        }
+
+
+        #tv-app:hover {
+            cursor: pointer;
+        }
+        #container-icon-show-menu:hover {
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="nav-top">
+        <div id="container-icon-show-menu">
+            <i class="fa fa-bars" aria-hidden="true" id="icon-show-menu"></i>
+        </div>
+        <div id="container-tv-app">
+            <span id="tv-app">Project</p>
+        </div>
+        <div id="nav-container3">
+
+        </div>
+        <div id="nav-container4">
+
+        </div>
+    </div>
+
+    <div id="container">
+        <p>hello</p>
+        <div id="menu">
+            <div id="background-menu"></div>
+            <div id="container-icon-menu">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        const iconMenu = document.getElementById('container-icon-show-menu');
+        const backgroundMenu = document.getElementById('background-menu');
+        iconMenu.addEventListener('click', () => {
+            backgroundMenu.style.display = 'block';
+        });
+        backgroundMenu.addEventListener('click', () => {
+            backgroundMenu.style.display = 'none';
+        });
+
+
+
+    </script>
+</body>
+</html>
