@@ -12,7 +12,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
     font-family: sans-serif;
 }
 
@@ -53,6 +52,7 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .nav-content {
