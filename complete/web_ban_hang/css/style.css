@@ -189,6 +189,7 @@ body {
 }
 #btn-seach-product {
     height: 42px;
+    width: 13%;
     padding: 11px;
     text-align: center;
     border: 1px solid #ddd;
