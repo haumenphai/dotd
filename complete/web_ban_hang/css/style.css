@@ -117,11 +117,12 @@ body {
     border: 1px solid rgb(148, 148, 148);
 }
 
+
 .main {
     background-color: rgb(255, 255, 255);
-    height: 100%;
     margin-top: var(--nav-height);
     display: flex;
+    min-height: 100%;
 }
 
 .left {
@@ -271,8 +272,9 @@ body {
 
 .product-image {
     height: 130px;
-    width: 100%;
     background-color: #b4b4b4;
+    margin: auto;
+    display: block;
 }
 
 .product-name, .product-price {
