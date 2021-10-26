@@ -98,6 +98,7 @@ body {
     font-size: 20px;
 }
 
+
 .user-cart {
     font-size: 20px;
     color: aqua;
@@ -105,7 +106,7 @@ body {
 }
 
 .user-cart-count {
-    font-size: 14px;
+    font-size: 13px;
     color: white;
     padding: 3px;
     margin: 0;
@@ -115,6 +116,9 @@ body {
     text-align: center;
     border-radius: 50px;
     border: 1px solid rgb(148, 148, 148);
+}
+.user-name {
+    font-size: 15px;
 }
 
 
