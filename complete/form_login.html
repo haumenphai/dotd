@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <style>
+        * {
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .login-form {
+            width: 300px;
+            margin: auto;
+            background-color: rgb(196, 224, 255);
+            margin-top: 50px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .text-input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #c0c0c0;
+            border-radius: 3px;
+        }
+        .text-input:focus {
+            outline: none;
+            border-color: #9ecaed;
+            box-shadow: 0 0 10px #70b8f3;
+        }
+
+        .login-form-title {
+            text-align: center;
+        }
+        .lable {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            color: aliceblue;
+            background-color: rgb(66, 107, 219);
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        .btn-login:hover {
+            background-color: rgb(58, 92, 184);
+        }
+        .btn-login:active {
+            box-shadow: 0 0 5px rgb(53, 86, 177);
+        }
+        
+
+        .layout-no-account {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+        .link {
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+       
+        .link-reset-password {
+            float: right;
+        }
+
+        .hoziontal-line {
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+            margin-top: 30px;
+        }
+
+        .center-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link-power {
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        <h2 class="login-form-title">Login</h2>
+        <div>
+            <p class="lable">User name:</p>
+            <input class="text-input" type="text" placeholder="username">
+        </div>
+        <div>
+            <p class="lable">Password:</p>
+            <input class="text-input" type="password" placeholder="password">
+        </div>
+        <button class="btn-login">Login</button>
+        <div class="layout-no-account">
+            <a href="#" class="link link-sign-up">No Account? Singup</a>
+            <a href="#" class="link link-reset-password">Reset Password</a>
+        </div>
+        
+        <div class="hoziontal-line"></div>
+        <div class="center-link">
+            <a href="#" class="link link-power">Power by Dohaumen</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+:root {
+    --nav-height: 50px;
+    --color-xam: rgb(235, 235, 235);
+    --nav-color: #424242;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+
+/* Meadia */
+
+
+/* Moblie */
+
+@media only screen and (max-width: 600px) {
+    ul.desktop-sceen {
+        display: none;
+    }
+    div.left {
+        display: none;
+    }
+    div.right {
+        display: none;
+    }
+    .moblie-screen {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    i.moblie-screen {
+        display: none;
+    }
+}
+
+
+/* end meadia */
+
+.nav {
+    background-color: var(--nav-color);
+    height: var(--nav-height);
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-content {
+    flex: 1;
+    display: flex;
+}
+
+.logo {
+    width: 60px;
+    height: 50px;
+}
+
+.nav-links-left {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.link:hover {
+    background-color: #252525;
+}
+
+.nav-right {
+    display: flex;
+    margin-left: auto;
+}
+
+.user-avatar {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.user-cart {
+    font-size: 20px;
+    color: aqua;
+    padding: 0px 15px 0px 15px;
+}
+
+.user-cart-count {
+    font-size: 14px;
+    color: white;
+    padding: 3px;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    background-color: red;
+    text-align: center;
+    border-radius: 50px;
+    border: 1px solid rgb(148, 148, 148);
+}
+
+.main {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    margin-top: var(--nav-height);
+    display: flex;
+}
+
+.left {
+    flex: 2;
+    background-color: var(--color-xam);
+}
+
+.content {
+    flex: 8;
+}
+
+.right {
+    flex: 2;
+    background-color: var(--color-xam);
+}
+
+.footer {
+    height: 200px;
+    background-color: var(--nav-color);
+}
+
+.menu-icon {
+    font-size: 25px;
+    padding: 0px 20px 0px 20px;
+}
+
+
+/* ---Left */
+
+.menu-categories {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.categroy-link {
+    color: #252525;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.categroy-link:hover {
+    background-color: rgb(201, 201, 201);
+}
+
+
+/* Seach */
+
+.search-view {
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#mySearch {
+    width: 90%;
+    font-size: 16px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+#btn-seach-product {
+    display: inline-block;
+    width: 9%;
+    padding: 11px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+#btn-seach-product:hover {
+    background-color: var(--color-xam);
+}
+#btn-seach-product:active {
+    background-color: #b4b4b4;
+}
+
+#mySearch:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #70b8f3;
+}
+
+#seach-result {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 2px 2px 5px black;
+}
+
+#seach-result>li>a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 13px;
+    display: block;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+#seach-result>li>a:hover {
+    background-color: #d8d8d8;
+}
+
+.current-category-product {
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .product-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .product-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.product-list {
+    display: grid;
+    padding: 10px;
+    grid-gap: 10px;
+}
+.product {
+    border: 1px solid gray;
+}
+
+.product-link {
+    text-decoration: none;
+    color: black;
+}
+.product-link:link:active, .product-link:visited:active {
+    color: black;
+}   
+
+
+.product:hover {
+    background-color: rgb(238, 238, 238);
+}
+
+
+.product-image {
+    height: 130px;
+    width: 100%;
+    background-color: #b4b4b4;
+}
+
+.product-name, .product-price {
+    margin: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.product-price {
+    color: tomato;
+}
+
+
+
+
+
+
+

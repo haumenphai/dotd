@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: rgb(196, 171, 171);
+        }
+        .navbar {
+            display: flex;
+            background-color: gray;
+            justify-content: space-between;
+            height: 50px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        }
+        .logo {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(204, 154, 88);
+        }
+        .nav-link {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-link > li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link > li > a {
+            text-decoration: none;
+            color: white;
+            padding: 0px 20px;
+            font-size: 18px;
+        }
+        .nav-link > li:hover {
+            background-color: rgb(82, 82, 82);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-link">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Product</a></li>
+        </ul>
+    </div>
+</body>
+</html>

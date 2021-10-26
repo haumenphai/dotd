@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            font-family: sans-serif;
+        }
+       
+        .logo {
+            width: 70px;
+            height: 50px;
+            background-color: red;
+            cursor: pointer;
+        }
+        .navbar {
+            height: 50px;
+            background-color: gray;
+            display: flex;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        }
+        .nav-left  {
+            display: flex;
+            height: 50px;
+            list-style-type: none;
+            align-items: center;
+        }
+        
+        .nav-right  {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            list-style-type: none;
+            flex-grow: 1;
+            flex-direction: row-reverse;
+        }
+        .item {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            height: 50px;
+            align-items: center;
+            padding: 0px 20px;
+        }
+      
+        .item:hover {
+            background-color: rgb(59, 59, 59);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"></div>
+        <ul class="nav-left">
+            <li class="nav-li"><a class="item" href="#1">Home</a></li>
+            <li class="nav-li"><a class="item" href="#2">About</a></li>
+        </ul>
+        <ul class="nav-right">
+            <li class="nav-li"><a class="item" href="#3">Service</a></li>
+            <li class="nav-li"><a class="item" href="#4">Custom</a></li>
+            <li class="nav-li"><a class="item" href="#5">Product</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <img src="images/logo.jpg" alt="" class="logo">
+        <div class="nav-content">
+            <ul class="nav-links-left desktop-sceen">
+                <li><a href="#" class="link">Home</a></li>
+                <li><a href="#" class="link">Product</a></li>
+                <li><a href="#" class="link">About</a></li>
+            </ul>
+            <a href="#"><i class="fa fa-bars link menu-icon moblie-screen"></i> </a>
+
+
+            <div class="nav-right">
+                <a href="#" class="link user-cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <p class="user-cart-count">52</p>
+                </a>
+                <a href="#" class="link">
+                    <div class="user-avatar">
+                        <i class="fa fa-user-circle-o " aria-hidden="true"></i> <br>
+                    </div>
+                    <span class="user-name">Mittcher Demo</span>
+                </a>
+            </div>
+        </div>
+
+    </nav>
+    <div class="main">
+        <div class="left">
+            <ul class="menu-categories">
+                <li><a href="#" class="categroy-link">Tất cả các sản phẩm</a></li>
+                <li><a href="#" class="categroy-link">Xe hơi cũ</a></li>
+                <li><a href="#" class="categroy-link">Xe hơi tầm trung</a></li>
+                <li><a href="#" class="categroy-link">Siêu xe hạng sang</a></li>
+                <li><a href="#" class="categroy-link">Du thuyền</a></li>
+                <li><a href="#" class="categroy-link">Trực thăng</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="search-view">
+                <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Tìm kiếm sản phẩm.." title="Tìm kiếm sản phẩm">
+                <i class="fa fa-search" aria-hidden="true" id="btn-seach-product" onclick="myFunction()"></i>
+                <ul id="seach-result">
+                    <li><a href="#">HTML</a></li>
+                </ul>
+            </div>
+            
+            <p class="current-category-product">Tất cả sản phẩm</p>
+            <div class="product-list">
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+                <div class="product">
+                    <a href="#" class="product-link">
+                        <img src="./images/xe-hoi-1.jpg" alt="" class="product-image">
+                        <p class="product-name">Xe hơi cũ ACBC</p>
+                        <p class="product-price">100.000.000 đ</p>
+                    </a>
+                </div>
+               
+
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+    <script>
+        const input = document.getElementById('mySearch');
+        const seachResult = document.getElementById('seach-result');
+
+        seachResult.innerHTML = "";
+
+        function myFunction() {
+            seachResult.innerHTML = "";
+
+            let keySeach = input.value.toLowerCase();
+            const productList = ['Du thuyen hang sang', 'Xe oto xin', 'May bay B54', 'Xe the thao 123', 'Truc thang'];
+
+            let content = "";
+            if (keySeach === 'all') {
+                productList.forEach(e => {
+                    content += `<li><a href="#">${e}</a><li>`
+                });
+            } else {
+                productList.forEach(e => {
+                    e = e.toLowerCase();
+                    if (e.includes(keySeach) && keySeach !== '') {
+                        content += `<li><a href="#">${e}</a><li>`
+                    }
+                });
+            }
+            seachResult.innerHTML = content;
+        }
+    </script>
+</body>
+
+</html>

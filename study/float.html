@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 
+            Học float.
+            Note:
+            - Không phải thuộc tính css nào cũng được kế thừa từ phần tử cha, một số thuộc tính được kế thừa như font-family,...
+            - Kích thước thẻ con có thể to hơn thẻ cha và làm tràn vùng chứa
+            - Chú ý đến padding, margin của phần tử, điều này có thể làm kích thước không như mong muốn
+            
+            Float: 
+                -thiết lập float cho 1 phần tử, các phần tử sau có thể trôi theo.
+                -thiết lập float cho cả 3 phần tử div, 3 phần tử trôi về cùng một phía
+            
+            float: left, right
+            clear: left, right, both
+            overflow: auto
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            font-family: sans-serif;
+        }
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="a"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    
+</body>
+</html>

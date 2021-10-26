@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Thực hành dùng float để dựng layout -->
+    <meta charset="UTF-8">
+    <style>
+        * {
+         
+            font-family: sans-serif;
+        }
+        
+        .header {
+            padding: 50px;
+            background-color: red;
+        }
+       
+        .footer {
+            padding: 50px;
+            background-color: royalblue;
+        }
+        .title {
+            text-align: center;
+        }
+        
+        .content > div {
+            float: left;
+         
+        }
+        .left {
+            width: 30%;
+            background-color: antiquewhite;
+            height: 250px;
+        }
+        .center {
+            width: 50%;
+            height: 250px;
+            background-color: blueviolet;
+        }
+        .right {
+            width: 20%;
+            height: 250px;
+            background-color: bisque;
+        }
+        .footer {
+            clear: both;
+        }
+        .list {
+            list-style: none;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .list > li {
+            padding: 7px;
+            border-bottom: 1px solid black;
+        }
+        .txt {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p class="title">Header</p>
+        </div>
+        <div class="content">
+            <div class="left">
+                <ul class="list">
+                    <li>HTML</li>
+                    <li>Css</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                  
+                </ul>
+            </div>
+            <div class="center">
+                <p class="txt">Đây là phần nội dung</p>
+            </div>
+            <div class="right">
+                <p class="txt">Đây là phần quảng cáo</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="title">Footer</p>
+        </div>
+    </div>
+   
+</body>
+</html>

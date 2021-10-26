@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .flex {
+            display: flex;
+            height: 100px;
+            background-color: rgb(136, 136, 136);
+        }
+        .item {
+            background-color: darkcyan;
+            flex: 1;
+            border: 1px solid black;
+        }
+        .item + .item {
+            margin-left: 20px;
+        }
+
+        .flex-box2 {
+            margin-top: 10px;
+        }
+        .box2 {
+            background-color: blanchedalmond;
+            border: 1px solid gray;
+        }
+        .i1 {
+            flex: 2;
+        }
+        .i2 {
+            flex: 6;
+        }
+        .i3 {
+            flex: 2;
+        }
+        .box2 + .box2 {
+            margin-left: 20px;
+        }
+
+        .flex3 {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            background-color: bisque;
+            justify-content: space-between;
+        }
+        .b {
+            width: 49%;
+            height: 50px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        .b3 {
+            width: 100%;
+        }
+
+        .flex4 {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            background-color: bisque;
+            justify-content: space-between;
+        }
+        .a {
+            width: 32%;
+            height: 100px;
+            margin: 10px 0px 0px 10px;
+            background-color: blueviolet;
+            border: 1px solid black;
+
+        }
+
+        .flex5 {
+            padding-top: 20px;
+            width: 300px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: bisque;
+            justify-content: space-between;
+        }
+        .c {
+            width: 32%;
+            padding-bottom: 32%;
+            margin-bottom: 2%;
+            background-color: brown;
+            border: 1px solid gray;
+            position: relative;
+        }
+
+        .flex6 {
+            margin-top: 20xp;
+            margin-left: 100px;
+            background-color: antiquewhite;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: flex-end;
+        }  
+        .d {
+            width: 80px;
+            background-color: rgb(44, 44, 116);
+            border: 1px solid black;
+        }
+        .d1 {
+            height: 20%;
+        }
+        .d2 {
+            height: 40%;
+        }
+        .d3 {
+            height: 80%;
+        }
+        .d4 {
+            height: 90%;
+        }
+        .d5 {
+            height: 50%;
+        }
+        
+        .flex7 {
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .e {
+            flex-direction: column;
+            background-color: brown;
+            border: 1px solid black;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .e1 {
+            width: 20%;
+        }
+        .e2 {
+            width: 40%;
+        }
+        .e3 {
+            width: 80%;
+        }
+        .e4 {
+            width: 90%;
+        }
+        .e5 {
+            width: 50%;
+            margin-bottom: 0px;
+        }
+
+        .flex8 {
+            margin-top: 20px;
+            margin-left: 100px;
+            width: 500px;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+        }
+        .r {
+            height: 50px;
+            width: 80%;
+            background-color: brown;
+            border: 1px solid black;
+            margin-bottom: 5px;
+        }
+        
+       
+
+
+    </style>
+</head>
+<body>
+    <div class="flex flex-box1">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="flex flex-box2">
+        <div class="box2 i1"></div>
+        <div class="box2 i2"></div>
+        <div class="box2 i3"></div>
+    </div>
+
+    <div class="flex3">
+        <div class="b b1"></div>
+        <div class="b b2"></div>
+        <div class="b b3"></div>
+        <div class="b b4"></div>
+        <div class="b b5"></div>
+    </div>
+
+    <div class="flex4">
+        <div class="a a1"></div>
+        <div class="a a2"></div>
+        <div class="a a3"></div>
+        <div class="a a4"></div>
+        <div class="a a5"></div>
+        <div class="a a6"></div>
+        <div class="a a7"></div>
+        <div class="a a8"></div>
+        <div class="a a9"></div>
+    </div>
+
+    <div class="flex5">
+        <div class="c c1"></div>
+        <div class="c c2"></div>
+        <div class="c c3"></div>
+        <div class="c c4"></div>
+        <div class="c c5"></div>
+        <div class="c c6"></div>
+        <div class="c c7"></div>
+        <div class="c c8"></div>
+        <div class="c c9"></div>
+    </div>
+
+    <div class="flex6">
+        <div class="d d1"></div>
+        <div class="d d2"></div>
+        <div class="d d3"></div>
+        <div class="d d4"></div>
+        <div class="d d5"></div>
+    </div>
+
+    <div class="flex7">
+        <div class="e e1"></div>
+        <div class="e e2"></div>
+        <div class="e e3"></div>
+        <div class="e e4"></div>
+        <div class="e e5"></div>
+    </div>
+
+    <div class="flex8">
+        <div class="r r5"></div>
+        <div class="r r5"></div>
+        <div class="r r5"></div>
+        <div class="r r5"></div>
+        <div class="r r5"></div>
+    </div>
+
+    <div style="margin-bottom: 200px;"></div>
+</body>
+</html>
