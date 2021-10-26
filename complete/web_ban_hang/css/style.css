@@ -131,7 +131,7 @@ body {
 }
 
 .content {
-    flex: 8;
+    flex: 6;
 }
 
 .right {
@@ -141,6 +141,7 @@ body {
 
 .footer {
     height: 200px;
+    width: 100%;
     background-color: var(--nav-color);
 }
 
