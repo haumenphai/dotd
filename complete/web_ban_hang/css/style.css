@@ -235,7 +235,17 @@ body {
     font-size: 15px;
 }
 
+@media  screen and (max-width: 600px) {
+    .product-list {
+        grid-template-columns: 1fr 1fr ;
+    }
+}
 
+@media  screen and (min-width: 601px) {
+    .product-list {
+        grid-template-columns: 1fr  1fr 1fr 1fr;
+    }
+}
 
 .product-list {
     display: grid;
@@ -244,6 +254,7 @@ body {
 }
 .product {
     border: 1px solid gray;
+
 }
 
 .product-link {
@@ -262,6 +273,7 @@ body {
 
 .product-image {
     height: 130px;
+    width: 130px;
     background-color: #b4b4b4;
     margin: auto;
     display: block;
