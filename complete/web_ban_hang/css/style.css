@@ -102,7 +102,6 @@ body {
 }
 
 .user-avatar {
-    margin-left: 10px;
     margin-right: 10px;
     font-size: 20px;
 }
@@ -111,7 +110,7 @@ body {
 .user-cart {
     font-size: 20px;
     color: aqua;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 10px 0px 10px;
 }
 
 .user-cart-count {
