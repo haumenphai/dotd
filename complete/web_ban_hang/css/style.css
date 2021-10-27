@@ -150,10 +150,51 @@ body {
     background-color: var(--color-xam);
 }
 
+@media  screen and (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media  screen and (min-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+}
 .footer {
     height: 200px;
+    padding: 20px;
+    padding-bottom: 200px;
     background-color: var(--nav-color);
+    display: grid;
+    margin: 0;
 }
+.h-line {
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(180, 180, 180);
+}
+.footer  p {
+    margin: 0;
+    margin-top: 10px;
+    color: rgb(211, 211, 211);
+}
+.tv-company {
+    margin: 0;
+    color: whitesmoke;
+}
+.tv-address {
+    color: rgb(211, 211, 211);
+}
+.footer-link {
+    color: rgb(211, 211, 211);
+}
+.footer-link + .footer-link {
+    margin-left: 10px;
+}
+
 
 .menu-icon {
     font-size: 25px;
@@ -162,12 +203,16 @@ body {
 
 
 /* ---Left */
+.title-categories {
+    font-weight: bold;
+    margin: 10px 10px 10px;
+    font-size: 20px;
+}
 
 .menu-categories {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: 20px;
 }
 
 .categroy-link {
@@ -176,6 +221,8 @@ body {
     display: block;
     padding: 10px;
     padding-left: 20px;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid #a0a0a0;
 }
 
 .categroy-link:hover {
