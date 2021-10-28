@@ -66,6 +66,7 @@
             display: flex;
         }
         
+        /* Moblie */
         @media screen and (max-width: 768px) {
             .main-left {
                 display: none;
@@ -76,8 +77,14 @@
             .main-right {
                 display: none;
             }
+            .sigin-box {
+                width: 95% !important;
+                margin: 10px auto 10px auto !important;
+            }
+            
         }
         
+        /* Desktop */
         @media screen and (min-width: 768px) {
             .main-left {
                 width: 30%;
@@ -88,6 +95,10 @@
             .main-right {
                 width: 30%;
             }
+            .main {
+                height: 80%;
+            }
+            
         }
         
         .sigin-box {
